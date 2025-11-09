@@ -141,7 +141,7 @@ body {
     background-position: center;
     visibility: hidden;
     transform-origin: bottom center;
-    will-change: transform; /* Performance optimization for animations */
+    will-change: transform, opacity; /* Performance optimization for animations */
     transition: transform 0.3s ease-out;
     cursor: pointer;
 }
