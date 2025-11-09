@@ -167,8 +167,7 @@ document.addEventListener("DOMContentLoaded", () => {
             ...cardPositions[posIndex], 
             duration: expandDuration, 
             ease: "power4.inOut",
-            // Add the box-shadow during the expansion animation for better performance
-            boxShadow: "0 30px 60px -15px rgba(0, 0, 0, 0.35)",
+            // Shadow is removed from here to ensure it's not present during initial expansion
             delay: expandDelay 
         }, 0);
     });
@@ -185,7 +184,12 @@ document.addEventListener("DOMContentLoaded", () => {
             card.posIndex = (card.posIndex - 1 + cardPositions.length) % cardPositions.length;
             const newPos = cardPositions[card.posIndex];
             
-            tl.to(card, { ...newPos, duration: 1.3, ease: "power2.inOut" }, 0);
+            tl.to(card, { 
+                ...newPos, 
+                duration: 1.3, 
+                ease: "power2.inOut",
+                boxShadow: "0 30px 60px -15px rgba(0, 0, 0, 0.35)" // Apply shadow only during the slow cycle
+            }, 0);
         });
     }
 });
