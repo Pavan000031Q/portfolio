@@ -163,7 +163,14 @@ document.addEventListener("DOMContentLoaded", () => {
         else if (cardId === 10) { posIndex = 9; }
         else { posIndex = cardId; }
         card.posIndex = posIndex;
-        initialAnimation.to(card, { ...cardPositions[posIndex], duration: expandDuration, ease: "power4.inOut", delay: expandDelay }, 0);
+        initialAnimation.to(card, { 
+            ...cardPositions[posIndex], 
+            duration: expandDuration, 
+            ease: "power4.inOut",
+            // Add the box-shadow during the expansion animation for better performance
+            boxShadow: "0 30px 60px -15px rgba(0, 0, 0, 0.35)",
+            delay: expandDelay 
+        }, 0);
     });
 
     function animateCards() {
