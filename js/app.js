@@ -81,15 +81,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const MobileCardPositions = [
         { x: -500, y: 100, rotation: -200, zIndex: 0, scale: 0.7, opacity: 0 },
-        { x: -500, y: 100, rotation: -140, zIndex: 1, scale: 0.8, opacity: 0 },
-        { x: -250, y: 110, rotation: -90, zIndex: 2, scale: 0.8, opacity: 1 },
-        { x: -220, y: 80, rotation: -60,  zIndex: 3, scale: 0.8, opacity: 1 },
+        { x: -300, y: 100, rotation: -140, zIndex: 1, scale: 0.8, opacity: 0 }, // Hide this card
+        { x: -250, y: 110, rotation: -90, zIndex: 2, scale: 0.8, opacity: 1 }, // Was -250
+        { x: -220, y: 80, rotation: -60,  zIndex: 3, scale: 0.8, opacity: 1 }, // Was -220
         { x: -150, y: 10,  rotation: -25,  zIndex: 4, scale: 0.9, opacity: 1 },
         { x: 0,    y: -20, rotation: 0,    zIndex: 5, scale: 1.1, opacity: 1 },
         { x: 150,  y: 10,  rotation: 25,   zIndex: 6, scale: 0.9, opacity: 1 },
-        { x: 220,  y: 80, rotation: 60,   zIndex: 7, scale: 0.8, opacity: 1 },
-        { x: 250,  y: 120, rotation: 90,  zIndex: 8, scale: 0.8, opacity: 1 },
-        { x: 500,  y: 100, rotation: 140,  zIndex: 9, scale: 0.7, opacity: 0 },
+        { x: 220,  y: 80, rotation: 60,   zIndex: 7, scale: 0.8, opacity: 1 }, // Was 220
+        { x: 250,  y: 120, rotation: 90,  zIndex: 8, scale: 0.8, opacity: 1 }, // Was 250
+        { x: 300,  y: 100, rotation: 140,  zIndex: 9, scale: 0.7, opacity: 0 }, // Hide this card
     ];
 
     const tabletCardPositions = [
@@ -167,6 +167,7 @@ document.addEventListener("DOMContentLoaded", () => {
             ...cardPositions[posIndex], 
             duration: expandDuration, 
             ease: "power4.inOut",
+            force3D: true, // Performance optimization
             // Shadow is removed from here to ensure it's not present during initial expansion
             delay: expandDelay 
         }, 0);
@@ -184,12 +185,18 @@ document.addEventListener("DOMContentLoaded", () => {
             card.posIndex = (card.posIndex - 1 + cardPositions.length) % cardPositions.length;
             const newPos = cardPositions[card.posIndex];
             
-            tl.to(card, { 
+            const tweenProps = {
                 ...newPos, 
                 duration: 1.3, 
                 ease: "power2.inOut",
-                boxShadow: "0 30px 60px -15px rgba(0, 0, 0, 0.35)" // Apply shadow only during the slow cycle
-            }, 0);
+                force3D: true // Performance optimization
+            };
+
+            // Only add box-shadow on non-mobile devices for performance
+            if (!mobileMediaQuery.matches) {
+                tweenProps.boxShadow = "0 30px 60px -15px rgba(0, 0, 0, 0.35)";
+            }
+            tl.to(card, tweenProps, 0);
         });
     }
 });
