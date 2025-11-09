@@ -1,0 +1,281 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #111;
+}
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+.header-logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+.header-name {
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-transform: uppercase; 
+    letter-spacing: 1px;
+}
+.hero-section {
+    height: 100vh;
+    position: relative;
+    text-align: center;
+}
+
+/* --- DESKTOP TEXT --- */
+.hero-subtitle-top {
+    position: absolute;
+    z-index: 11;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #555;
+    line-height: 1;
+    top: 25vh;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50px);
+}
+.hero-title {
+    position: absolute;
+    font-size: 8rem;
+    font-weight: 900;
+    z-index: 10;
+    line-height:.8 ;
+    top: 25vh;
+    left: 50%;
+    transform: translateX(-50%) translateY(0);
+} 
+.hero-tagline {
+    position: absolute;
+    font-size: 1rem;
+    font-weight: 400;
+    text-align: center;
+    max-width: 400px;
+    color: #555;
+    line-height: 1.6;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    
+    /* This is now inside a container */
+    position: static;
+    transform: none;
+    max-width: 100%;
+}
+.hero-tagline { font-size: 1.2rem; } /* Increase project name font size */
+.hero-tagline-container {
+    position: absolute;
+    text-align: center;
+    max-width: 400px;
+    bottom: 5vh; 
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 11;
+}
+
+.project-heading {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #111; /* Change font color to black */
+    margin-bottom: 0.5rem; /* Space between heading and project name */
+}
+
+/* --- DESKTOP CARD CONTAINER --- */
+.animation-container {
+    position: absolute;
+    width: 1200px;
+    height: 800px;
+    
+    /* DESKTOP FIX: Positioned between title (25vh) and tagline (90vh) */
+    top: 57.5vh;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 12;
+}
+
+.card-mask {
+    position: absolute;
+    top: 0;
+    width: 35%; /* Cover the sides of the container */
+    height: 100%;
+    background-color: #f0f0f0; /* Match the body background to be invisible */
+    z-index: 2; /* Higher than side cards (z-index: 1), lower than inner cards */
+}
+.card-mask-left {
+    left: 0;
+}
+.card-mask-right {
+    right: 0;
+}
+
+.card {
+    position: absolute;
+    
+    /* GLOBAL FIX: Set new card size */
+    width: 288px;
+    height: 384px;
+    
+    left: 50%;
+    top: 50%;
+    
+    /* GLOBAL FIX: Update margins for new size */
+    margin-left: -144px; /* -half width */
+    margin-top: -192px; /* -half height */
+    
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    background-size: cover;
+    background-position: center;
+    visibility: hidden;
+    transform-origin: bottom center;
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+    cursor: pointer;
+}
+
+/* --- ABOUT ME SECTION --- */
+.about-section {
+    position: relative; /* Create a stacking context */
+    z-index: 15; /* Higher than the animation-container (12) */
+    width: 100%;
+    height: 100vh;
+    background-color: #f0f0f0; /* Match the body background */
+    color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+}
+.about-content {
+    color: #111; /* Make text visible against the light background */
+}
+.about-content h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+.about-content p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 700px;
+}
+
+.social-links {
+    position: fixed;
+    right: 3rem;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    z-index: 100;
+}
+.social-links a { text-decoration: none; color: #111; transition: transform 0.2s ease, color 0.2s ease; }
+.social-links a:hover { color: #555; transform: scale(1.1); }
+.social-links svg { width: 24px; height: 24px; }
+
+/* HIDE THE MOBILE CARD ON DESKTOP */
+.mobile-card-display {
+    display: none;
+}
+
+
+/* --- 
+--- TABLET MEDIA QUERY --- 
+--- */
+@media (max-width: 1024px) {
+    .hero-section {
+        /* TAB FIX: Ensure hero section takes full viewport height */
+        height: 100vh;
+        /* TAB FIX: Hide any content that overflows the hero section */
+        overflow: hidden;
+    }
+
+    .hero-title { 
+        /* TAB FIX: Increased font size */
+        font-size: 10rem; 
+    }
+    .hero-subtitle-top { 
+        /* TAB FIX: Increased font size */
+        font-size: 2.5rem; 
+    }
+    .hero-tagline-container {
+        bottom: 5vh;
+        width: 90%;
+    }
+    .hero-tagline {
+        font-size: 1.2rem;
+    }
+    
+    .animation-container {
+        /* TAB FIX: Adjusted card position */
+        top: 65vh;
+    }
+
+    .about-section {
+        /* TAB FIX: Remove debug color */
+        /* background-color: red; */
+    }
+}
+
+
+/* --- 
+--- MOBILE MEDIA QUERY --- 
+--- */
+@media (max-width: 768px) {
+    .social-links{ display: none; }
+    .header-name { display: none; }
+    .main-header { padding: 1.5rem; }
+    .header-logo { font-size: 0.9rem; }
+    
+    .hero-title { 
+        /* MOBILE FIX: Increased font size */
+        font-size: 4rem; 
+        top: 20vh;
+        transform: translateX(-50%) translateY(0);
+    }
+    .hero-subtitle-top { 
+        /* MOBILE FIX: Increased font size */
+        font-size: 1rem; 
+        top: 20vh;
+        transform: translateX(-50%) translateY(-30px);
+    }
+    .hero-tagline-container {
+        max-width: 90%;
+        bottom: 10vh;
+        top: auto; /* Remove top property */
+    }
+    .hero-tagline {
+        font-size: 0.8rem;
+    }
+    
+    /* SHOW AND STYLE THE 3-CARD ANIMATION */
+    .animation-container {
+        /* MOBILE FIX: Make animation container smaller and reposition */
+        width: 100%;
+        height: 500px;
+        top: 60vh;
+    }
+
+    /* HIDE THE OLD STATIC MOBILE CARD */
+    .mobile-card-display {
+        display: none;
+    }
+
+    .mobile-card-display img {
+        display: none; /* Hide the image inside as well */
+    }
+}
