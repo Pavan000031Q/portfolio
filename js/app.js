@@ -122,7 +122,7 @@ document.addEventListener("DOMContentLoaded", () => {
     mobileMediaQuery.addEventListener('change', handleScreenChange);
     handleScreenChange();
 
-    const fallDuration = 4;
+    const fallDuration = 3;
     const pause = 0.5;
     const expandDuration = 1.3;
     const expandDelay = fallDuration + pause;

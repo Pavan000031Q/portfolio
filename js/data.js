@@ -33,20 +33,20 @@ const portfolioData = {
     ],
     projects: [
         // --- 4 PROJECT CARDS ---
-        { id: 5, name: "TradeMetrics", image: "assets/images/TradeMetrics.png" },
-        { id: 6, name: "Career Guidance", image: "assets/images/CareerGuidance.png" },
-        { id: 7, name: "Advanced AI Voice Assistant", image: "assets/images/coming soon-iron-man.png" },
-        { id: 8, name: "Blockchain Certificate Verification", image: "assets/images/coming soon-captain-america.png" },
+        { id: 5, name: "TradeMetrics", image: "assets/images/TradeMetrics.jpg" },
+        { id: 6, name: "Career Guidance", image: "assets/images/CareerGuidance.jpg" },
+        { id: 7, name: "Advanced AI Voice Assistant", image: "assets/images/coming soon-iron-man.jpg" },
+        { id: 8, name: "Blockchain Certificate Verification", image: "assets/images/coming soon-captain-america.jpg" },
 
         // --- 4 SKILL CARDS ---
-        { id: 1, name: "Full-Stack Web & App Developer", image: "assets/images/FullStack.png" },
-        { id: 2, name: "UI/UX Designer", image: "assets/images/uiux designer.png" },
-        { id: 9, name: "Company Financial Analyst", image: "assets/images/Fintech.png" },
-        { id: 10, name: "AI & Machine Learning Student", image: "assets/images/ai&ml.png" },
+        { id: 1, name: "Full-Stack Web & App Developer", image: "assets/images/FullStack.jpg" },
+        { id: 2, name: "UI/UX Designer", image: "assets/images/uiux designer.jpg" },
+        { id: 9, name: "Company Financial Analyst", image: "assets/images/Fintech.jpg" },
+        { id: 10, name: "AI & Machine Learning Student", image: "assets/images/ai&ml.jpg" },
 
         // --- ABOUT & CONTACT CARDS ---
-        { id: 3, name: "hello 👋i am pavan reddy", image: "assets/images/about me.png" },
-        { id: 4, name: "pavanreddy000031@gmail.com", image: "assets/images/contactme.png" }
+        { id: 3, name: "hello 👋i am pavan reddy", image: "assets/images/about me.jpg" },
+        { id: 4, name: "pavanreddy000031@gmail.com", image: "assets/images/contactme.jpg" }
     ],
     mobileCardImage: "assets/images/image5.jpg"
 };
