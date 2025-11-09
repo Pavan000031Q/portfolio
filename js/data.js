@@ -32,16 +32,21 @@ const portfolioData = {
         }
     ],
     projects: [
-        { id: 1, name: "Project 7", image: "assets/images/Project 7.png" }, // Was Project 7
-        { id: 2, name: "Project 8", image: "assets/images/Project 8.png" }, // Was Project 8
-        { id: 3, name: "Project 9", image: "assets/images/Project 9.png" }, // Was Project 9
-        { id: 4, name: "Project 10", image: "assets/images/Project 10.png" }, // Was Project 10
+        // --- 4 PROJECT CARDS ---
         { id: 5, name: "TradeMetrics", image: "assets/images/TradeMetrics.png" },
         { id: 6, name: "Career Guidance", image: "assets/images/CareerGuidance.png" },
-        { id: 7, name: "Project 3", image: "assets/images/Project 3.png" }, // Was Project 3
-        { id: 8, name: "Project 4", image: "assets/images/Project 4.png" }, // Was Project 4
-        { id: 9, name: "Project 5", image: "assets/images/Project 5.png" }, // Was Project 6
-        { id: 10, name: "Project 6", image: "assets/images/Project 6.png" } // Was Project 5
+        { id: 7, name: "Advanced AI Voice Assistant", image: "assets/images/coming soon-iron-man.png" },
+        { id: 8, name: "Blockchain Certificate Verification", image: "assets/images/coming soon-captain-america.png" },
+
+        // --- 4 SKILL CARDS ---
+        { id: 1, name: "Full-Stack Web & App Developer", image: "assets/images/FullStack.png" },
+        { id: 2, name: "UI/UX Designer", image: "assets/images/uiux designer.png" },
+        { id: 9, name: "Company Financial Analyst", image: "assets/images/Fintech.png" },
+        { id: 10, name: "AI & Machine Learning Student", image: "assets/images/ai&ml.png" },
+
+        // --- ABOUT & CONTACT CARDS ---
+        { id: 3, name: "hello 👋i am pavan reddy", image: "assets/images/about me.png" },
+        { id: 4, name: "pavanreddy000031@gmail.com", image: "assets/images/contactme.png" }
     ],
     mobileCardImage: "assets/images/image5.jpg"
 };

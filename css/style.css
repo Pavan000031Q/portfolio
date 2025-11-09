@@ -85,8 +85,8 @@ body {
 }
 
 .project-heading {
-    font-size: 0.8rem;
-    font-weight: 600;
+    font-size: 1rem;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
     color: #111; /* Change font color to black */
@@ -136,7 +136,7 @@ body {
     margin-top: -192px; /* -half height */
     
     border-radius: 16px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.35);
     background-size: cover;
     background-position: center;
     visibility: hidden;
@@ -259,7 +259,7 @@ body {
         top: auto; /* Remove top property */
     }
     .hero-tagline {
-        font-size: 0.8rem;
+        font-size: 1rem;
     }
     
     /* SHOW AND STYLE THE 3-CARD ANIMATION */
